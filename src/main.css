@@ -1,0 +1,198 @@
+body {
+  background-color:#fff;
+  font: normal 18px Roboto,arial,sans-serif;
+}
+
+.container {
+    padding: 200px;
+    padding-top: 100px;
+    position: fixed;
+}
+
+.background {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+input {
+    resize: vertical;
+    font: normal 18px Roboto,arial,sans-serif;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(92, 146, 218);
+    padding: 8px;
+}
+
+textarea {
+    resize: vertical;
+    width: 96%;
+    font: normal 18px Roboto,arial,sans-serif;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(92, 146, 218);
+    padding: 8px;
+}
+
+select {
+    width: 100%;
+    font: normal 18px Roboto,arial,sans-serif;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(92, 146, 218);
+    padding: 8px;
+}
+
+#date {
+    width: 96%;
+    resize: none;
+    font: normal 18px Roboto,arial,sans-serif;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(92, 146, 218);
+    padding: 5px;
+}
+
+h1 { 
+    font: bold 28px Roboto,arial,sans-serif;
+    border:0 solid rgb(92, 146, 218); 
+    border-bottom-width:2px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+#login {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+  }
+
+#register {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+  }
+
+#output {
+    color: red;
+}
+
+h5 {
+    font: bold 20px Roboto,arial,sans-serif;
+    margin: 20px 0;
+}
+
+#create {
+    width: 100%;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+}
+
+#update {
+    margin-right: 4px;
+    min-width: 76px;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+}
+
+#edit {
+    margin-right: 4px;
+    min-width: 76px;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+}
+
+#delete {
+    min-width: 76px;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+}
+
+#logout{
+    min-width: 76px;
+    background-color: #fff;
+    border: solid;
+    border-width: 2px;
+    border-color:rgb(92, 146, 218);
+    border-radius: 12px;
+    box-shadow:0 1px 0 #cfcfcf;
+    text-align: center;
+    padding: 8px;
+    font: bold Roboto,arial,sans-serif;
+    font-size: 18px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 400px 200px 200px 200px 160px;
+    grid-gap: 15px;
+    margin-top: 5px;
+}
+
+#grid-itemn4 {
+    grid-column: 4 / span 2;
+}
+
+#grid-itemp4 {
+    grid-column: 4 / span 2;
+}
