@@ -7,29 +7,8 @@ export default class ShowTask extends Component {
             desc: "",
             pri: "",
             stat: "",
-            date: "",
-            reverseDate: ""
+            date: ""
         }
-    }
-    componentWillMount() {
-        this.displayDate();
-    }
-    displayDate(){
-        let input = this.props.date;
-        let output = "";
-        let cutHere = input.length;
-        for (let i = input.length; i > 0; i--) {
-            if (input.substring(i - 1, i) === "-") {
-                output += input.substring(i, cutHere) + "/";
-                cutHere = i - 1;
-            }
-            if (i === 1) {
-                output += input.substring(i - 1, cutHere)
-            }
-        }
-        this.setState({
-            reverseDate: output
-        })
     }
     render() {
         if (!this.state.view) {    
@@ -38,7 +17,7 @@ export default class ShowTask extends Component {
                     <div>{this.props.desc}</div>
                     <div>{this.props.pri}</div>
                     <div>{this.props.stat}</div>
-                    <div>{this.state.reverseDate}</div>
+                    <div>{this.props.date}</div>
                     <div>
                         <button id="edit" onClick={this.edit}>edit</button>
                         <button id="delete" onClick={this.remove}>delete</button>

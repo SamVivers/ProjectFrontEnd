@@ -6,8 +6,8 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      login: 1,
-      user: "sam"
+      login: 0,
+      user: ""
     }
   }
   render(){
