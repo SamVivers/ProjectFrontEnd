@@ -12,24 +12,25 @@ export default class ShowTask extends Component {
         }
     }
     componentWillMount() {
-        this.setState({
-            reverseDate: this.props.date
-        })
-    //     this.displayDate();
+        this.displayDate();
     }
-    // displayDate(){
-    //     let input = this.props.date;
-    //     let output = "";
-    //     console.log(input.length);
-    //     console.log(input);
-    //     for (let i = input.length; i > 0; i--) {
-    //         output += input.substring(i - 1, i);
-    //         console.log(output);
-    //     }
-    //     this.setState({
-    //         reverseDate: output
-    //     })
-    // }
+    displayDate(){
+        let input = this.props.date;
+        let output = "";
+        let cutHere = input.length;
+        for (let i = input.length; i > 0; i--) {
+            if (input.substring(i - 1, i) === "-") {
+                output += input.substring(i, cutHere) + "/";
+                cutHere = i - 1;
+            }
+            if (i === 1) {
+                output += input.substring(i - 1, cutHere)
+            }
+        }
+        this.setState({
+            reverseDate: output
+        })
+    }
     render() {
         if (!this.state.view) {    
             return (          
