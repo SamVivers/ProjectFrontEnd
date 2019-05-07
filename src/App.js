@@ -19,7 +19,7 @@ export default class App extends Component {
     if (this.state.login === 1) {
       return(
         <div class="background">
-          <div>{this.state.user}<button id="logout" onClick={this.outLog}>Logout</button></div>
+          <div><button id="logout" onClick={this.outLog}>logout</button>{this.state.user}</div>
           <GetTasks user={this.state.user}/>
         </div>
       )

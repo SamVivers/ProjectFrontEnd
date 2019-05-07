@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ShowTask from './ShowTask.js'
 import Title from './Title.js'
 import Input from './Input.js'
+import Columns from './Columns.js'
 export default class GetTasks extends Component {
     constructor(props){
         super(props);
@@ -30,13 +31,10 @@ export default class GetTasks extends Component {
                 <Title name="New Task"/>
                 <Input getTasks={this.getTasks} user={this.props.user}/>
                 <Title name="Current Tasks"/>
-                <div class="grid-container" id="prevTasks">
-                    <div id="grid-itemp1">Description:</div>
-                    <div id="grid-itemp2">Priority:</div>
-                    <div id="grid-itemp3">Status:</div>
-                    <div id="grid-itemp4">Do by:</div>
-                </div>
-                {this.state.tasks.map((task)=><ShowTask getTasks={this.getTasks}
+                <Columns/>
+                <br/>
+                {this.state.tasks.map((task)=><ShowTask state1="completed"
+                                                        getTasks={this.getTasks}
                                                         user={this.props.user}
                                                         id={task.id} 
                                                         desc={task.description} 
@@ -44,6 +42,22 @@ export default class GetTasks extends Component {
                                                         stat={task.status} 
                                                         date={this.displayDate(task.do_by)}
                                                             />)}
+                <Title name="Completed Tasks"/>
+                <Columns/>
+                <br/>
+                {this.state.tasks.map((task)=><ShowTask state1=""
+                                                        state2="not-started"
+                                                        state3="started"
+                                                        state4="progressing"
+                                                        state5="finishing-up"
+                                                        getTasks={this.getTasks}
+                                                        user={this.props.user}
+                                                        id={task.id} 
+                                                        desc={task.description} 
+                                                        pri={task.priority} 
+                                                        stat={task.status} 
+                                                        date={this.displayDate(task.do_by)}
+                                                            />)}                                          
             </div>
         )
     }

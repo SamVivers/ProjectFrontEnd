@@ -11,19 +11,29 @@ export default class ShowTask extends Component {
         }
     }
     render() {
-        if (!this.state.view) {    
-            return (          
-                <div class="grid-container" id={this.props.id}>
-                    <div>{this.props.desc}</div>
-                    <div>{this.props.pri}</div>
-                    <div>{this.props.stat}</div>
-                    <div>{this.props.date}</div>
-                    <div>
-                        <button id="edit" onClick={this.edit}>edit</button>
-                        <button id="delete" onClick={this.remove}>delete</button>
+        if (!this.state.view) {
+            if (this.props.state1 !== this.props.stat &&
+                this.props.state2 !== this.props.stat &&
+                this.props.state3 !== this.props.stat &&
+                this.props.state4 !== this.props.stat &&
+                this.props.state5 !== this.props.stat) {
+                return (          
+                    <div class="grid-container" id={this.props.id}>
+                        <div>{this.props.desc}</div>
+                        <div>{this.props.pri}</div>
+                        <div>{this.props.stat}</div>
+                        <div>{this.props.date}</div>
+                        <div>
+                            <button id="edit" onClick={this.edit}>edit</button>
+                            <button id="delete" onClick={this.remove}>delete</button>
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            } else {
+                return (
+                    <div></div>
+                )
+            }
         } else {
             return (
                 <div class="grid-container">

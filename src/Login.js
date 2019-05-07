@@ -14,31 +14,41 @@ export default class Login extends Component {
             return (
                 <div class="container">   
                     <div class="background">
-                        <h4>Welcome to Sam's List</h4>
-                        <div>Please login to your account</div>        
+                        <h5>Welcome to Sam's List</h5>
+                        <div>Please login to your account</div>       
+                        <br/> 
                         <input type="email" id="userName" onChange={this.inputUsername} class="user-input" placeholder="email address" required="required"></input>
+                        <br/>
                         <br/>
                         <input type={this.state.type} id="userPassword" onChange={this.inputPassword} class="user-input" placeholder="password" required="required"></input>
                         <br/>
-                        <button onClick={this.showPassword}>Show Password</button>
+                        <input type="checkbox" onClick={this.showPassword}></input>show password<br/>
+                        <br/>
                         <button id="login" type="submit" onClick={this.login}>login</button>
-                        <p>or <button onClick={this.yesReg}>register</button> as a new users</p>
+                        <br/>
+                        <br/>
+                        <p>or <button onClick={this.yesReg}>register</button>as a new users</p>
                     </div>
                 </div>
             )
         } else {
             return (
-                <div class="container">   
-                {console.log(this.state.username)}
-                {console.log(this.state.password)}
+                <div class="container">
                     <div class="background">
-                        <div>Please register an account</div>        
+                        <h5>Welcome to Sam's List</h5>
+                        <div>Please register an account</div>    
+                        <br/>    
                         <input type="email" id="userName" onChange={this.inputUsername} class="user-input" placeholder="email address" required="required"></input>
+                        <br/>
                         <br/>
                         <input type={this.state.type} id="newUserPassword" onChange={this.inputPassword} class="user-input" placeholder="password" required="required"></input>
                         <br/>
-                        <button onClick={this.showPassword}>Show Password</button>
+                        <input type="checkbox" onClick={this.showPassword}></input>show password<br/>
+                        <br/>
                         <button id="login" type="submit" onClick={this.register}>register</button>
+                        <br/>
+                        <br/>
+                        <p>or return to <button onClick={this.noReg}>login</button>screen</p>
                     </div>
                 </div>
             )
@@ -83,6 +93,11 @@ export default class Login extends Component {
     yesReg=()=>{
         this.setState({
             register: 1
+        })
+    }
+    noReg=()=>{
+        this.setState({
+            register: 0
         })
     }
     register=()=>{
