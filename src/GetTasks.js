@@ -64,18 +64,17 @@ export default class GetTasks extends Component {
         )
     }
     displayDate(input){
-        // let output = "";
-        // let cutHere = input.length;
-        // for (let i = input.length; i > 0; i--) {
-        //     if (input.substring(i - 1, i) === "-") {
-        //         output += input.substring(i, cutHere) + "/";
-        //         cutHere = i - 1;
-        //     }
-        //     if (i === 1) {
-        //         output += input.substring(i - 1, cutHere)
-        //     }
-        // }
-        // return output;
-        return input.substring(8,input.length) + "/" + input.substring(5,7) + "/" + input.substring(0,4);
+        let output = "";
+        let cutHere = input.length;
+        for (let i = input.length; i > 0; i--) {
+            if (input.substring(i - 1, i) === "-") {
+                output += input.substring(i, cutHere) + "/";
+                cutHere = i - 1;
+            }
+            if (i === 1) {
+                output += input.substring(0, cutHere)
+            }
+        }
+        return output;  
     }
 }
