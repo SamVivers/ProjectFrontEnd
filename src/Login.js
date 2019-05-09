@@ -45,7 +45,7 @@ export default class Login extends Component {
                         <br/>
                         <input type="checkbox" onClick={this.showPassword}></input>show password<br/>
                         <br/>
-                        <button id="login" type="submit" onClick={this.register}>register</button>
+                        <button id="login" type="submit" onClick={this.check}>register</button>
                         <br/>
                         <br/>
                         <p>or return to <button onClick={this.noReg}>login</button>screen</p>
@@ -78,17 +78,23 @@ export default class Login extends Component {
     login=()=>{
         let URL='http://localhost:8081/api/user/user/' + this.state.username;
         let request = new XMLHttpRequest();
-        request.open('GET', URL);
+        request.open('POST', URL);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader("Accept", "application/json");
         request.responseType = 'json';
         request.onload=()=>{
             let user = request.response;
-            if (user !== null) {
-                if (this.state.password === user.password) {
+            if (user !== null && user === 1) {
                     this.props.setUser(this.state.username)
-                } 
             }
+        
         }
-        request.send();
+        let body = {
+            username: this.state.username,
+            password: this.state.password
+            };
+        body = JSON.stringify(body);
+        request.send(body);
     }
     yesReg=()=>{
         this.setState({
@@ -99,6 +105,19 @@ export default class Login extends Component {
         this.setState({
             register: 0
         })
+    }
+    check=()=>{
+        let URL='http://localhost:8081/api/user/user/' + this.state.username;
+        let request = new XMLHttpRequest();
+        request.open('GET', URL);
+        request.responseType = 'json';
+        request.onload=()=>{
+            let user = request.response;
+            if (user === 0) {
+                    this.register();
+            }
+        }
+        request.send();
     }
     register=()=>{
         let URL='http://localhost:8081/api/user/user';

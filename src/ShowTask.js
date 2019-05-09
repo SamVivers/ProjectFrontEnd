@@ -25,7 +25,7 @@ export default class ShowTask extends Component {
                         <div>{this.props.date}</div>
                         <div>
                             <button id="edit" onClick={this.edit}>edit</button>
-                            <button id="delete" onClick={this.remove}>delete</button>
+                            <button class="delete" onClick={this.remove}>delete</button>
                         </div>
                     </div>
                 )
@@ -57,7 +57,7 @@ export default class ShowTask extends Component {
                     <div><input type="date" id="date" onChange={this.changeDate} class="user-input" required="required"/></div>                        
                     <div>
                         <button onClick={this.update} id="update">update</button>
-                        <button onClick={this.remove} id="update">delete</button>
+                        <button onClick={this.remove} class="delete">delete</button>
                     </div>
                  </div>
             )

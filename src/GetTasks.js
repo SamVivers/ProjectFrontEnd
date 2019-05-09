@@ -33,7 +33,8 @@ export default class GetTasks extends Component {
                 <Title name="Current Tasks"/>
                 <Columns/>
                 <br/>
-                {this.state.tasks.map((task)=><ShowTask state1="completed"
+                {this.state.tasks.map((task)=><ShowTask key={task.id}
+                                                        state1="completed"
                                                         getTasks={this.getTasks}
                                                         user={this.props.user}
                                                         id={task.id} 
@@ -45,7 +46,8 @@ export default class GetTasks extends Component {
                 <Title name="Completed Tasks"/>
                 <Columns/>
                 <br/>
-                {this.state.tasks.map((task)=><ShowTask state1=""
+                {this.state.tasks.map((task)=><ShowTask key={task.id}
+                                                        state1=""
                                                         state2="not-started"
                                                         state3="started"
                                                         state4="progressing"
@@ -62,17 +64,18 @@ export default class GetTasks extends Component {
         )
     }
     displayDate(input){
-        let output = "";
-        let cutHere = input.length;
-        for (let i = input.length; i > 0; i--) {
-            if (input.substring(i - 1, i) === "-") {
-                output += input.substring(i, cutHere) + "/";
-                cutHere = i - 1;
-            }
-            if (i === 1) {
-                output += input.substring(i - 1, cutHere)
-            }
-        }
-        return output;
+        // let output = "";
+        // let cutHere = input.length;
+        // for (let i = input.length; i > 0; i--) {
+        //     if (input.substring(i - 1, i) === "-") {
+        //         output += input.substring(i, cutHere) + "/";
+        //         cutHere = i - 1;
+        //     }
+        //     if (i === 1) {
+        //         output += input.substring(i - 1, cutHere)
+        //     }
+        // }
+        // return output;
+        return input.substring(8,input.length) + "/" + input.substring(5,7) + "/" + input.substring(0,4);
     }
 }

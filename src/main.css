@@ -1,6 +1,6 @@
 body {
-  background-color:#fff;
-  font: normal 18px Roboto,arial,sans-serif;
+    background-color:#fff;
+    font: normal 18px Roboto,arial,sans-serif;
 }
 
 .container {
@@ -95,8 +95,11 @@ h5 {
     width: 100%;
 }
 
-#delete {
+.delete {
     float: right;
+    /* background-color: red;
+    color: white;
+    border-color: purple; */
 }
 
 .grid-container {
