@@ -102,6 +102,15 @@ h5 {
     border-color: purple; */
 }
 
+#headings {
+    text-decoration: underline;
+}
+
+.msg {
+    color: red;
+    font-size: 10pt;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 400px 200px 200px 200px 160px;

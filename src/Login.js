@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {IPADDR} from './Constants.js'
 export default class Login extends Component {
     constructor(props){
         super(props);
@@ -6,7 +7,8 @@ export default class Login extends Component {
             username: "",
             password: "",
             type:"password",
-            register: 0
+            register: 0,
+            errorMsg: ""
         }
     }
     render(){
@@ -27,6 +29,7 @@ export default class Login extends Component {
                         <button id="login" type="submit" onClick={this.login}>login</button>
                         <br/>
                         <br/>
+                        <div class="msg">{this.state.errorMsg}</div>
                         <p>or <button onClick={this.yesReg}>register</button>as a new users</p>
                     </div>
                 </div>
@@ -48,6 +51,7 @@ export default class Login extends Component {
                         <button id="login" type="submit" onClick={this.check}>register</button>
                         <br/>
                         <br/>
+                        <div class="msg">{this.state.errorMsg}</div>
                         <p>or return to <button onClick={this.noReg}>login</button>screen</p>
                     </div>
                 </div>
@@ -67,16 +71,18 @@ export default class Login extends Component {
     }
     inputUsername=(a)=>{
         this.setState({
-            username:a.target.value
+            username:a.target.value,
+            errorMsg:""
         });
     }
     inputPassword=(b)=>{
         this.setState({
-            password:b.target.value
+            password:b.target.value,
+            errorMsg:""
         });
     }
     login=()=>{
-        let URL='http://localhost:8081/api/user/user/' + this.state.username;
+        let URL=`http://${IPADDR}:8081/api/user/user/` + this.state.username;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");
@@ -84,10 +90,13 @@ export default class Login extends Component {
         request.responseType = 'json';
         request.onload=()=>{
             let user = request.response;
-            if (user !== null && user === 1) {
+            if (user === 1) {
                     this.props.setUser(this.state.username)
-            }
-        
+            } else {
+                this.setState({
+                    errorMsg: "Incorrect username or password"
+                })
+            }        
         }
         let body = {
             username: this.state.username,
@@ -107,7 +116,7 @@ export default class Login extends Component {
         })
     }
     check=()=>{
-        let URL='http://localhost:8081/api/user/user/' + this.state.username;
+        let URL=`http://${IPADDR}:8081/api/user/user/` + this.state.username;
         let request = new XMLHttpRequest();
         request.open('GET', URL);
         request.responseType = 'json';
@@ -115,12 +124,16 @@ export default class Login extends Component {
             let user = request.response;
             if (user === 0) {
                     this.register();
+            } else {
+                this.setState({
+                    errorMsg: "There is already a user with that name"
+                })
             }
         }
         request.send();
     }
     register=()=>{
-        let URL='http://localhost:8081/api/user/user';
+        let URL=`http://${IPADDR}:8081/api/user/user`;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");

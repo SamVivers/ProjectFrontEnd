@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Columns from './Columns.js'
+import {IPADDR} from './Constants.js'
 export default class Input extends Component {
     constructor(props){
         super(props);
@@ -67,7 +68,7 @@ export default class Input extends Component {
     }
 
     create=()=>{
-        let URL='http://localhost:8081/api/tasklist/tasks';
+        let URL=`http://${IPADDR}:8081/api/tasklist/tasks`;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");

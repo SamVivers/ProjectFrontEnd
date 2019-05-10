@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {IPADDR} from './Constants.js'
 export default class ShowTask extends Component {
     constructor(props){
         super(props);
@@ -94,7 +95,7 @@ export default class ShowTask extends Component {
     }
 
     update=()=>{
-        let URL='http://localhost:8081/api/tasklist/tasks/' + this.props.id;
+        let URL=`http://${IPADDR}:8081/api/tasklist/tasks/` + this.props.id;
         let request = new XMLHttpRequest();
         request.open('PUT', URL);
         request.setRequestHeader("Content-Type", "application/json");
@@ -135,7 +136,7 @@ export default class ShowTask extends Component {
     }
 
     remove=()=>{
-        let URL='http://localhost:8081/api/tasklist/tasks/' + this.props.id;
+        let URL=`http://${IPADDR}:8081/api/tasklist/tasks/` + this.props.id;
         let request = new XMLHttpRequest();
         request.open('DELETE', URL);
         request.responseType = 'json';

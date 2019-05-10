@@ -3,6 +3,7 @@ import ShowTask from './ShowTask.js'
 import Title from './Title.js'
 import Input from './Input.js'
 import Columns from './Columns.js'
+import {IPADDR} from './Constants.js'
 export default class GetTasks extends Component {
     constructor(props){
         super(props);
@@ -14,7 +15,7 @@ export default class GetTasks extends Component {
         this.getTasks();
     }
     getTasks=()=>{
-        let URL='http://localhost:8081/api/tasklist/alltasks/' + this.props.user;
+        let URL=`http://${IPADDR}:8081/api/tasklist/alltasks/` + this.props.user;
         let request = new XMLHttpRequest();
         request.open('GET', URL);
         request.responseType = 'json';
