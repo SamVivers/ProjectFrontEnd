@@ -16,7 +16,7 @@ export default class Input extends Component {
         return (
                 <div>
                     <Columns/>
-                    <div class="grid-container">
+                    <div className="grid-container">
                         <div id="grid-itemn5"><textarea type="text" id="task" className="user-input" 
                             onChange={this.inputDesc} rows="1" required="required"></textarea></div>
                         <div id="grid-itemn6"><select id="priority" onChange={this.inputPri}>
@@ -35,7 +35,7 @@ export default class Input extends Component {
                             <option value="completed">completed</option>
                         </select></div> 
                         <div id="grid-itemn8"><input type="date" id="date" onChange={this.inputDate} 
-                            class="user-input" required="required"/></div>                        
+                            className="user-input" required="required"/></div>                        
                         <div id="grid-itemn9"><button onClick={this.create} type="submit" id="create" 
                             form="newTask" value="Submit">create</button></div>
                     </div>

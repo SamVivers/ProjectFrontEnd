@@ -14,7 +14,7 @@ export default class Login extends Component {
     render(){
         if (this.state.register === 0) {
             return (
-                <div class="container">   
+                <div className="container">   
                     <div class="background">
                         <h5>Welcome to Sam's List</h5>
                         <div>Please login to your account</div>       
@@ -29,15 +29,15 @@ export default class Login extends Component {
                         <button id="login" type="submit" onClick={this.login}>login</button>
                         <br/>
                         <br/>
-                        <div class="msg">{this.state.errorMsg}</div>
+                        <div className="msg">{this.state.errorMsg}</div>
                         <p>or <button onClick={this.yesReg}>register</button>as a new users</p>
                     </div>
                 </div>
             )
         } else {
             return (
-                <div class="container">
-                    <div class="background">
+                <div className="container">
+                    <div className="background">
                         <h5>Welcome to Sam's List</h5>
                         <div>Please register an account</div>    
                         <br/>    
@@ -51,7 +51,7 @@ export default class Login extends Component {
                         <button id="login" type="submit" onClick={this.check}>register</button>
                         <br/>
                         <br/>
-                        <div class="msg">{this.state.errorMsg}</div>
+                        <div className="msg">{this.state.errorMsg}</div>
                         <p>or return to <button onClick={this.noReg}>login</button>screen</p>
                     </div>
                 </div>

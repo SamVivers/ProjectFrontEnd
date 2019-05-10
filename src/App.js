@@ -8,8 +8,8 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      login: 0,
-      user: ""
+      login: 1,
+      user: "sam"
     }
   }
   render(){
@@ -20,7 +20,7 @@ export default class App extends Component {
     }
     if (this.state.login === 1) {
       return(
-        <div class="background">
+        <div className="background">
           <div><button id="logout" onClick={this.outLog}>logout</button>{this.state.user}</div>
           <GetTasks user={this.state.user}/>
         </div>

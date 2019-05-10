@@ -19,14 +19,14 @@ export default class ShowTask extends Component {
                 this.props.state4 !== this.props.stat &&
                 this.props.state5 !== this.props.stat) {
                 return (          
-                    <div class="grid-container" id={this.props.id}>
+                    <div className="grid-container" id={this.props.id}>
                         <div>{this.props.desc}</div>
                         <div>{this.props.pri}</div>
                         <div>{this.props.stat}</div>
                         <div>{this.props.date}</div>
                         <div>
                             <button id="edit" onClick={this.edit}>edit</button>
-                            <button class="delete" onClick={this.remove}>delete</button>
+                            <button className="delete" onClick={this.remove}>delete</button>
                         </div>
                     </div>
                 )
@@ -37,7 +37,7 @@ export default class ShowTask extends Component {
             }
         } else {
             return (
-                <div class="grid-container">
+                <div className="grid-container">
                     <div><textarea type="text" id="task" placeholder={this.props.desc} className="user-input" 
                     onChange={this.changeDesc} rows="1" ></textarea></div>
                     <div><select id="priority" placeholder={this.props.pri} onChange={this.changePri}>
@@ -55,10 +55,10 @@ export default class ShowTask extends Component {
                         <option value="finishing-up">finishing up</option>
                         <option value="completed">completed</option>
                     </select></div> 
-                    <div><input type="date" id="date" onChange={this.changeDate} class="user-input" required="required"/></div>                        
+                    <div><input type="date" id="date" onChange={this.changeDate} className="user-input" required="required"/></div>                        
                     <div>
                         <button onClick={this.update} id="update">update</button>
-                        <button onClick={this.remove} class="delete">delete</button>
+                        <button onClick={this.remove} className="delete">delete</button>
                     </div>
                  </div>
             )
