@@ -15,14 +15,16 @@ export default class Login extends Component {
         if (this.state.register === 0) {
             return (
                 <div className="container">   
-                    <div class="background">
+                    <div className="background">
                         <h5>Welcome to Sam's List</h5>
                         <div>Please login to your account</div>       
                         <br/> 
-                        <input type="email" id="userName" onChange={this.inputUsername} class="user-input" placeholder="email address" required="required"></input>
+                        <input type="email" id="userName" onChange={this.inputUsername} className="user-input" 
+                        placeholder="email address" required="required"></input>
                         <br/>
                         <br/>
-                        <input type={this.state.type} id="userPassword" onChange={this.inputPassword} class="user-input" placeholder="password" required="required"></input>
+                        <input type={this.state.type} id="userPassword" onChange={this.inputPassword} 
+                        className="user-input" placeholder="password" required="required"></input>
                         <br/>
                         <input type="checkbox" onClick={this.showPassword}></input>show password<br/>
                         <br/>
@@ -41,10 +43,12 @@ export default class Login extends Component {
                         <h5>Welcome to Sam's List</h5>
                         <div>Please register an account</div>    
                         <br/>    
-                        <input type="email" id="userName" onChange={this.inputUsername} class="user-input" placeholder="email address" required="required"></input>
+                        <input type="email" id="userName" onChange={this.inputUsername} className="user-input" 
+                        placeholder="email address" required="required"></input>
                         <br/>
                         <br/>
-                        <input type={this.state.type} id="newUserPassword" onChange={this.inputPassword} class="user-input" placeholder="password" required="required"></input>
+                        <input type={this.state.type} id="newUserPassword" onChange={this.inputPassword} 
+                        className="user-input" placeholder="password" required="required"></input>
                         <br/>
                         <input type="checkbox" onClick={this.showPassword}></input>show password<br/>
                         <br/>

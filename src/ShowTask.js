@@ -55,7 +55,8 @@ export default class ShowTask extends Component {
                         <option value="finishing-up">finishing up</option>
                         <option value="completed">completed</option>
                     </select></div> 
-                    <div><input type="date" id="date" onChange={this.changeDate} className="user-input" required="required"/></div>                        
+                    <div><input type="date" id="date" onChange={this.changeDate} className="user-input" 
+                    required="required"/></div>                        
                     <div>
                         <button onClick={this.update} id="update">update</button>
                         <button onClick={this.remove} className="delete">delete</button>
