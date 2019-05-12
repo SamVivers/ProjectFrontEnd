@@ -111,12 +111,14 @@ export default class Login extends Component {
     }
     yesReg=()=>{
         this.setState({
-            register: 1
+            register: 1,
+	    errorMsg: ""
         })
     }
     noReg=()=>{
         this.setState({
-            register: 0
+            register: 0,
+	    errorMsg: ""
         })
     }
     check=()=>{
