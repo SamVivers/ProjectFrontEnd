@@ -19,8 +19,8 @@ export default class Login extends Component {
                         <h5>Welcome to Sam's List</h5>
                         <div>Please login to your account</div>       
                         <br/> 
-                        <input type="email" id="userName" onChange={this.inputUsername} className="user-input" 
-                        placeholder="email address" required="required"></input>
+                        <input type="text" id="userName" onChange={this.inputUsername} className="user-input" 
+                        placeholder="username" required="required"></input>
                         <br/>
                         <br/>
                         <input type={this.state.type} id="userPassword" onChange={this.inputPassword} 
