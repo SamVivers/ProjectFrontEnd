@@ -86,7 +86,7 @@ export default class Login extends Component {
         });
     }
     login=()=>{
-        let URL=`http://${IPADDR}:8081/api/user/user/` + this.state.username;
+        let URL=`${IPADDR}/api/user/user/` + this.state.username;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");
@@ -120,7 +120,7 @@ export default class Login extends Component {
         })
     }
     check=()=>{
-        let URL=`http://${IPADDR}:8081/api/user/user/` + this.state.username;
+        let URL=`${IPADDR}/api/user/user/` + this.state.username;
         let request = new XMLHttpRequest();
         request.open('GET', URL);
         request.responseType = 'json';
@@ -137,7 +137,7 @@ export default class Login extends Component {
         request.send();
     }
     register=()=>{
-        let URL=`http://${IPADDR}:8081/api/user/user`;
+        let URL=`${IPADDR}/api/user/user`;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");

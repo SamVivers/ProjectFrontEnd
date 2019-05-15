@@ -68,7 +68,7 @@ export default class Input extends Component {
     }
 
     create=()=>{
-        let URL=`http://${IPADDR}:8081/api/tasklist/tasks`;
+        let URL=`${IPADDR}/api/tasklist/tasks`;
         let request = new XMLHttpRequest();
         request.open('POST', URL);
         request.setRequestHeader("Content-Type", "application/json");

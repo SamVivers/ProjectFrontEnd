@@ -15,7 +15,7 @@ export default class GetTasks extends Component {
         this.getTasks();
     }
     getTasks=()=>{
-        let URL=`http://${IPADDR}:8081/api/tasklist/alltasks/` + this.props.user;
+        let URL=`${IPADDR}/api/tasklist/alltasks/` + this.props.user;
         let request = new XMLHttpRequest();
         request.open('GET', URL);
         request.responseType = 'json';
